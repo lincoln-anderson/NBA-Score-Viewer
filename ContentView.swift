@@ -8,6 +8,8 @@ struct ContentView: View {
                 .foregroundColor(.accentColor)
             Text("Hello, world!")
             NBAScoreCardView()
+            
+            NBAScoreCardView()
         }
     }
 }
