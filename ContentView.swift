@@ -10,7 +10,7 @@ struct ContentView: View {
     var body: some View {
         let items = 1...12
         let columns = [
-            GridItem(.adaptive(minimum: 130, maximum: 130))
+            GridItem(.adaptive(minimum: 160, maximum: 180))
             ]
         VStack{
             Text("NBA SCHEDULE FOR \(date, format: .dateTime.day().month())")

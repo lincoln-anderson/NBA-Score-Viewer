@@ -23,28 +23,36 @@ struct NBAScoreCardView: View {
             
                 Text(passedAwayTeam)
                     .bold()
+                    .font(.title)
                 
                 Text("-")
                     .bold()
+                    .font(.title)
             
                 Text(passedHomeTeam)
                     .bold()
+                    .font(.title)
                 
             }
             
             HStack{
                 Text(passedQuarter)
                     .bold()
+                    .font(.title)
                 Text(passedTime)
                     .bold()
+                    .font(.title)
             }
             HStack{
                 Text(String(passedAwayTeamScore))
                     .bold()
+                    .font(.title)
                 Text("-")
                     .bold()
+                    .font(.title)
                 Text(String(passedHomeTeamScore))
                     .bold()
+                    .font(.title)
             }
         }
         .padding()
