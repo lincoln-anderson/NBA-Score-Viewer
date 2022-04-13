@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 @MainActor
-class NBAScoreCollectionFetcher: ObservableObject {
+class NBAScoreFetcher: ObservableObject {
     @Published var scoreData = NBAScoreCollection(sample: [NBAScore.defaultScore])
     @Published var currentNBAScore = NBAScore.defaultScore
     
@@ -29,6 +29,8 @@ class NBAScoreCollectionFetcher: ObservableObject {
         guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw FetchError.badRequest }
 
         scoreData = try JSONDecoder().decode(NBAScoreCollection.self, from: data)
+         
+        print(data)
     }
     
 }
