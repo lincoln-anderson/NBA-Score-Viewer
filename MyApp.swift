@@ -1,10 +1,13 @@
 import SwiftUI
 
 @main
-struct MyApp: App {
+struct NBAScoreViewer: App {
+    @StateObject private var fetcher = NBAScoreFetcher()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(fetcher)
+            
         }
     }
 }

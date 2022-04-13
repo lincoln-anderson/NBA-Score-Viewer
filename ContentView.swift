@@ -13,6 +13,7 @@ struct ContentView: View {
             GridItem(.adaptive(minimum: 160, maximum: 180))
             ]
         VStack{
+            
             Text("NBA SCHEDULE FOR \(date, format: .dateTime.day().month())")
                 .bold()
                 .font(.title)

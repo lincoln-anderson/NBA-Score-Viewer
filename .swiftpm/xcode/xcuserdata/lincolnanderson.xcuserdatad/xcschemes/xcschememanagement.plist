@@ -27,6 +27,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>NBA-Score-Viewer</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>
