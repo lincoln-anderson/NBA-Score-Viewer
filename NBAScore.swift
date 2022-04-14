@@ -1,12 +1,26 @@
 import SwiftUI
 
-struct NBAScore: Codable {
-    var HomeTeam: String
-    var HomeScore: Int
-    var AwayTeam: String
-    var AwayScore: Int
+struct NBAScore: Codable, Identifiable{
+    var id: Int
+    var games: [GameList]
+}
+
+struct GameList: Codable, Identifiable {
+    var id: UUID
+    var vTeam: Team
+    var hTeam: Team
     
-    static let defaultScore = NBAScore(HomeTeam: "MIA", HomeScore: 100, AwayTeam: "GSW", AwayScore: 102)
+}
+
+struct Team: Codable, Identifiable {
+    var id: UUID
+    var shortName: String
+    var score: PassedScore
+}
+
+struct PassedScore: Codable, Identifiable {
+    var id: UUID
+    var points: Int
 }
 
 struct NBAScoreCollection: Codable {
