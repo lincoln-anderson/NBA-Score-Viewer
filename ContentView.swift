@@ -10,7 +10,15 @@ struct ContentView: View {
                 .font(.title)
         }
         .task {
-            getData()
+            print("this is happeneing")
+            var data = getData()
+            
+            do {
+                print("does it get here")
+                let decodedGames = try JSONDecoder().decode(Games.self, from: data)
+            } catch {
+                print(error)
+            }
         }
     }
     
@@ -22,7 +30,7 @@ struct ContentView: View {
             "X-RapidAPI-Key": "ff3a7ae9bcmsh4e698cda74ed1fbp1f4864jsn65a0ee09062d"
         ]
 
-        let request = NSMutableURLRequest(url: NSURL(string: "https://api-nba-v1.p.rapidapi.com/games/date/2022-04-13")! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: "https://api-nba-v1.p.rapidapi.com/games/date/2022-04-10")! as URL,
                                                 cachePolicy: .useProtocolCachePolicy,
                                             timeoutInterval: 10.0)
         request.httpMethod = "GET"
@@ -35,9 +43,11 @@ struct ContentView: View {
             } else {
                 let httpResponse = response as? HTTPURLResponse
                 rData = data!
+                
                 print(httpResponse!)
             }
         })
+        dataTask.resume()
         return(rData)
 
     }
