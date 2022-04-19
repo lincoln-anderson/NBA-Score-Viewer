@@ -2,7 +2,6 @@ import SwiftUI
 
 struct ContentView: View {
     let date = Date()
-    var scores: NBAScore
     var body: some View {
         VStack{
             
@@ -11,15 +10,7 @@ struct ContentView: View {
                 .font(.title)
         }
         .task {
-            do {
-                let data = getData()
-                
-                scores = try JSONDecoder().decode(NBAScore.self, from: data)
-                 
-                print(scores)
-            } catch {
-                print("broke")
-            }
+            getData()
         }
     }
     
@@ -47,10 +38,6 @@ struct ContentView: View {
                 print(httpResponse!)
             }
         })
-        
-        
-        dataTask.resume()
-    
         return(rData)
 
     }
